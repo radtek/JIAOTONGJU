@@ -14,7 +14,7 @@ namespace DYApp.Application.Impl
     public class WorkFlowService : IWorkFlowService
     {
         private IWorkFlowRepository workFlowRepository;
-
+        private int x=0;
         public WorkFlowService(IWorkFlowRepository workFlowRepository)
         {
             this.workFlowRepository = workFlowRepository;
