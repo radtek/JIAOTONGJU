@@ -1,0 +1,168 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
+    <title>Index</title>
+    <style type="text/css">
+        th, td{
+            border:1px solid #000;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+        }
+        ul{
+            list-style:none;
+        }
+        ul li{
+            width:300px;
+            text-align:center;
+            margin-top:5px;
+        }
+    </style>
+    <script type="text/javascript">
+       // jQuery.support.cors = true;
+        //$.ajax({
+        //    url: "http://localhost/api/UserService/Login",
+        //    method: "post",
+        //    data: { UserName: "admin", Password: "admin" },
+        //    success: function (data) {
+        //        $("#con").text(data.Message);
+        //    }
+        //});
+        function login() {
+            $.post("http://192.168.40.36/api/UserService/Login", $("#frm").serialize(), function (data) {
+                $("#con").text(data.Message);
+                getUserList();
+            });
+        }
+        function getUserList() {
+            $.ajax({
+                url: "http://localhost/api/UserService/GetUserInfo",
+                method: "post",
+                success: function (data) {
+                    $("#list").empty();
+                    $(data).each(function (index, item) {
+                        var s = "<tr>";
+                        s += "<td>" + item.UserName + "</td>";
+                        s += "<td>" + item.Password + "</td>";
+                        s += "<td>" + item.RoleName + "</td>";
+                        s += "<td><input type='button' value='删除' style='width:80px;height:25px;' onclick=\"remove('" + item.ID + "')\"/>";
+                        s += "</tr>";
+                        $("#list").append(s);
+                    });
+                }
+            });
+        }
+        function getRoleList() {
+            $.ajax({
+                url: "http://192.168.40.36/api/RoleService/GetRoleList",
+                method: "post",
+                success: function (data) {
+                    $("#roleList").empty();
+                    $(data).each(function (index, item) {
+                        var s = "<tr>";
+                        s += "<td>" + item.ID + "</td>";
+                        s += "<td>" + item.Name + "</td>";
+                        s += "<td><input type='button' value='删除' style='width:80px;height:25px;' onclick=\"removeRole('" + item.ID + "')\"/>";
+                        s += "</tr>";
+                        $("#roleList").append(s);
+                    });
+                }
+            });
+        }
+        function getFunctionList() {
+            $.ajax({
+                url: "http://localhost/api/FunctionService/GetFunctionList",
+                method: "post",
+                success: function (data) {
+                    $("#functionList").empty();
+                    $(data).each(function (index, item) {
+                        var s = "<tr>";
+                        s += "<td>" + item.ID + "</td>";
+                        s += "<td>" + item.Name + "</td>";
+                        s += "<td>" + item.Url + "</td>";
+                        s += "<td><input type='button' value='删除' style='width:80px;height:25px;' onclick=\"removeRole('" + item.ID + "')\"/>";
+                        s += "</tr>";
+                        $("#functionList").append(s);
+                    });
+                }
+            });
+        }
+        function remove(id) {
+            $.ajax({
+                url: "http://localhost/api/UserService/RemoveUser",
+                method: "post",
+                data: { ID: id },
+                success: function (data) {
+                    $("#con").text(data.Message);
+                    getUserList();
+                }
+            });
+        }
+        function jump() {
+            location.href = "http://www.hao123.com/";
+            sessionStorage
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="跳转" style="width:80px;height:25px;" onclick="jump()" />
+    <div id="con"></div>
+    <form id="frm">
+        <ul>
+            <li><label>用户名：</label><input type="text" id="userName" name="UserName" /></li>
+            <li><label>密码：</label><input type="password" id="passWord" name="Password" /> </li>
+            <li><input type="button" value="添加"  style="height:25px;width:80px;" onclick="login()"/>
+            <input type="hidden" name="RoleID" value="9219a309-3c86-e711-bc65-68f728a20cf6" />
+            </li>
+            
+        </ul>
+    </form>
+
+    <input type="button" value="获取用户列表"  style="width:100px;height:25px;" onclick="getUserList()" />
+    <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;margin-top:5px;margin-bottom:5px;">
+        <thead>
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>角色</th>
+            <th style="width:100px;">操作</th>
+        </tr>
+            </thead>
+        <tbody id="list">
+            
+        </tbody>
+    </table>
+    <input type="button" value="获取角色列表" style="width:100px;height:25px;" onclick="getRoleList()" />
+    <table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;margin-top:5px;margin-bottom:5px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>角色名称</th>
+                <th style="width:100px;">操作</th>
+            </tr>
+        </thead>
+        <tbody id="roleList"></tbody>
+    </table>
+    <input type="button" value="获取功能列表" style="width:100px;height:25px;" onclick="getFunctionList()" />
+<table cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;margin-top:5px;margin-bottom:5px;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>功能名称</th>
+            <th>URL</th>
+            <th style="width:100px;">操作</th>
+        </tr>
+    </thead>
+    <tbody id="functionList"></tbody>
+</table>
+
+</body>
+</html>

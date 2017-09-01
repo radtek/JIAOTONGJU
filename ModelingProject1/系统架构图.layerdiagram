@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ca01e654-6616-4709-9f18-5b54537a8af8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="4a1b8261-9efd-4ba6-b90f-cee4a85ceedd" name="领域层&#xD;&#xA;(Domain)" />
+    <layer Id="ee3490be-6de2-440b-b673-da275d28fe55" name="仓储层&#xD;&#xA;（Repository）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="2f517dc9-15d7-4acd-b437-d57e9cb435a8" direction="Forward">
+          <layerMoniker Id="4a1b8261-9efd-4ba6-b90f-cee4a85ceedd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4a50a6eb-36ac-45d4-b987-70652145d8b0" direction="Forward">
+          <layerMoniker Id="cf9ac39d-b22b-4a17-9ed5-3b8eaf8bba7c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="e9f58088-4ecf-49de-998e-bb0c547f408c" name="基础架构层&#xD;&#xA;(Infrastructure)">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="06fb23e9-506e-4c5d-9c75-89446f024285" direction="Forward">
+          <layerMoniker Id="b3a3a5bd-8165-4b22-b430-cdda50f21186" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="2870f386-3392-4710-8abc-22a58b87caee" name="应用层&#xD;&#xA;（Application）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="148b2163-262b-4fdb-9b55-5e7ea308179f" direction="Forward">
+          <layerMoniker Id="0450cd49-fe00-4777-9b67-67d973a75d9d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="a7024320-7e8f-432d-8ac2-0f6d724abcc4" direction="Forward">
+          <layerMoniker Id="4a1b8261-9efd-4ba6-b90f-cee4a85ceedd" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="5c2624e3-382d-48ad-b59a-876bcf092ecc" direction="Forward">
+          <layerMoniker Id="b3a3a5bd-8165-4b22-b430-cdda50f21186" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0450cd49-fe00-4777-9b67-67d973a75d9d" name="数据传输对象&#xD;&#xA;(DataTransferObject)" />
+    <layer Id="b3a3a5bd-8165-4b22-b430-cdda50f21186" name="服务契约层&#xD;&#xA;（ServiceContracts）">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="e2517ac7-b339-4802-85c1-fddb944ad328" direction="Forward">
+          <layerMoniker Id="0450cd49-fe00-4777-9b67-67d973a75d9d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="cf9ac39d-b22b-4a17-9ed5-3b8eaf8bba7c" name="数据库&#xD;&#xA;（Database）" />
+    <layer Id="04e0911a-4457-481c-8198-5cf1f1f322af" name="WebService">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="93900195-611f-4c9d-a0d7-4964480587bc" direction="Forward">
+          <layerMoniker Id="b3a3a5bd-8165-4b22-b430-cdda50f21186" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="8381fd7b-227e-437e-aebd-e1f3f572690f" direction="Forward">
+          <layerMoniker Id="e9f58088-4ecf-49de-998e-bb0c547f408c" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="acc88c72-50f2-424e-9d4f-483566b67f68" direction="Forward">
+          <layerMoniker Id="0450cd49-fe00-4777-9b67-67d973a75d9d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="cbb81b90-64c1-4345-b847-8bd8b220b7f3" name="PC端UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a6fbc28d-dc5a-451b-81cd-6c28d46ec8db" direction="Forward">
+          <layerMoniker Id="04e0911a-4457-481c-8198-5cf1f1f322af" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="9933a8bb-ef05-4f43-998f-8c4438e88197" name="移动端UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="af2f6790-7191-4b08-9737-b764e5c9e96b" direction="Forward">
+          <layerMoniker Id="04e0911a-4457-481c-8198-5cf1f1f322af" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

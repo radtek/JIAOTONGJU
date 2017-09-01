@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5B2C7D9-1239-46AA-B271-525855D531F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DYApp.Repositories</RootNamespace>
+    <AssemblyName>DYApp.Repositories</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DYApp.WebApi\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.9.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\DatabaseInitialize.cs" />
+    <Compile Include="DAO\DYContext.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\AskRecordTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\CaseHandlingTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\EvidenceDetailTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\EvidenceTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\FilingTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\FunctionTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\InvolvedTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\RoleTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\SceneRecordTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\TypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\UserInfoTypeConfiguration.cs" />
+    <Compile Include="DAO\EntityTypeConfiguration\WorkFlowTypeConfiguration.cs" />
+    <Compile Include="DAO\RepositoryContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryBase.cs" />
+    <Compile Include="Repository\AskRecordRepository.cs" />
+    <Compile Include="Repository\CaseHandlingRepository.cs" />
+    <Compile Include="Repository\EvidenceRepository.cs" />
+    <Compile Include="Repository\FilingRepository.cs" />
+    <Compile Include="Repository\FunctionRepository.cs" />
+    <Compile Include="Repository\InvolvedRepository.cs" />
+    <Compile Include="Repository\RoleRepository.cs" />
+    <Compile Include="Repository\SceneRecordRepository.cs" />
+    <Compile Include="Repository\UserInfoRepository.cs" />
+    <Compile Include="Repository\WorkFlowRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DYApp.Domain\DYApp.Domain.csproj">
+      <Project>{B3B19797-E157-4452-8CFA-86983100DAD6}</Project>
+      <Name>DYApp.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

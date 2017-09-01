@@ -1,0 +1,87 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EvidenceManage</title>
+    <script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
+    <style>
+        table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        th,td{
+            border:1px solid #000;
+        }
+        li{
+            height:40px;
+            line-height:40px;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+        function getList() {
+            $.ajax({
+                url: "http://127.0.0.1/api/EvidenceService/GetDetailList",
+                method: "post",
+                data: { EvidenceID: "4bee22cc-538d-e711-bc68-68f728a20cf6" },
+                success: function (data) {
+                    $("#content").empty();
+                    var s = "";
+                    $(data).each(function (index, item) {
+                        s += "<tr>";
+                        s += "<td>" + item.Name + "</td>";
+                        s += "<td>" + item.Rule + "</td>";
+                        s += "<td>" + item.Quantity + "</td>";
+                        s += "<td>" + item.Place + "</td>";
+                        s += "</tr>";
+                    });
+                    $("#content").append(s);
+                }
+            });
+        }
+        function addDetail() {
+            $.post("http://127.0.0.1/api/EvidenceService/AddDetail", $("#frm").serialize(), function (data) {
+                console.log("res", data);
+                getList();
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <div style="width:80%;margin:0 auto;">
+        <form id="frm">
+            <ul>
+                <li><label>名称:</label><input type="text" name="Name" style="width:200px;height:25px;" /></li>
+                <li><label>规格:</label><input type="text" name="Rule" style="width:200px;height:25px;" /></li>
+                <li><label>数量:</label><input type="text" name="Quantity" style="width:200px;height:25px;" /></li>
+                <li><label>地点:</label><input type="text" name="Place" style="width:200px;height:25px;" /></li>
+            </ul>
+            <input type="hidden" name="EvidenceID" value="4bee22cc-538d-e711-bc68-68f728a20cf6" />
+        </form>
+        <div style="margin-bottom:5px;">
+            <input type="button" value="获取" style="width:80px;height:25px;" onclick="getList()" />
+            <input type="button" value="添加" style="width:80px;height:25px;" onclick="addDetail()" />
+        </div>
+        <table cellpadding="3" cellspacing="0" style="margin-bottom:5px;">
+            <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>规格</th>
+                    <th>数量</th>
+                    <th>地点</th>                    
+                </tr>
+            </thead>
+            <tbody id="content">
+
+            </tbody>
+        </table> 
+    </div>
+</body>
+</html>

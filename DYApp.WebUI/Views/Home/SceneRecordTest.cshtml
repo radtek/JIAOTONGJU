@@ -1,0 +1,145 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
+    <title>SceneRecordTest</title>
+    <style>
+        th,td{
+            border:1px solid #000;
+        }
+        .bom td{
+            height:50px;
+            text-align:center;
+        }
+    </style>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+        $.ajax({
+            url: "http://dysoft.bclzdd.com/api/SceneRecordService/GetList",
+            method: "post",
+            success: function (data) {
+                $("#con").empty();
+                $(data).each(function (index, item) {
+                    var s = "<tr>";
+                    s += "<td>" + item.Content + "</td>";
+                    s += "<td>" + item.InvolvedName + "</td>";
+                    s += "<td>" + item.Place + "</td>";
+                    s += "<td>" + item.Time + "</td>";
+                    s += "<td style='text-align:center;'><input type='button' value='查看' style='width:80px;height:25px;' onclick='getSceneRecord(\"" + item.ID + "\")'/></td>";
+                    s += "</tr>";
+                    $("#con").append(s);
+                });
+            }
+        });
+
+        function getSceneRecord(id) {
+            $.ajax({
+                url: "http://dysoft.bclzdd.com/api/SceneRecordService/GetSceneRecord",
+                method: "post",
+                data: { ID: id },
+                success: function (data) {
+                    $("#spPlace").text(data.Place);
+                    $("#spTime").text(data.Time);
+                    $("#spEnforcers1").text(data.Enforcers1);
+                    $("#spCertificates1").text(data.Certificates1);
+                    $("#spRecorder").text(data.Recorder);
+                    $("#spEnforcers2").text(data.Enforcers2);
+                    $("#spCertificates2").text(data.Certificates2);
+                    $("#spName").text(data.InvolvedName);
+                    $("#spSex").text(data.InvolvedSex);
+                    $("#spInvolvedIDCode").text(data.InvolvedIDCode);
+                    $("#spInvolvedRelation").text(data.InvolvedRelation);
+                    $("#spInvolvedDepartment").text(data.InvolvedDepartment);
+                    $("#spInvolvedTelNo").text(data.InvolvedTelNo);
+                    $("#spInvolvedAddress").text(data.InvolvedAddress);
+                }
+            });
+        }
+        function getInvolved() {
+            $.ajax({
+                url: "http://localhost:6541/api/EvidenceService/AddEvidence",
+                method: "post",
+                data: { FilingID: "aa74987c-2a8d-e711-bc67-85cd6ab490e0" },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+     <div style="width:1000px;margin:0 auto;">
+         <table style="width:100%;border-collapse:collapse;">
+             <thead>
+                 <tr>
+                     <th>违法行为</th>
+                     <th>违法者</th>                     
+                     <th>违法地点</th>
+                     <th>违法时间</th>
+                     <th style="width:100px;">操作</th>
+                 </tr>                                  
+             </thead>
+             <tbody id="con">
+
+             </tbody>
+         </table>
+         <div><input type="button" onclick="getInvolved()" value="获取" style="width:80px;height:25px;" /></div>
+         <table cellpadding="5" style="width:100%;border-collapse:collapse;margin-top:20px;" class="bom">
+             <tr>
+                 <td style="width:100px;">执法地点</td>
+                 <td colspan="2"><span id="spPlace"></span></td>
+                 <td style="width:200px;">执法时间</td>
+                 <td colspan="2"><span id="spTime"></span></td>
+             </tr>
+             <tr>
+                 <td rowspan="2">执法人员</td>
+                 <td style="width:150px;"><span id="spEnforcers1"></span></td>
+                 <td style="width:150px;" rowspan="2">执法证号</td>
+                 <td style="width:200px;"><span id="spCertificates1"></span></td>
+                 <td rowspan="2" style="width:100px;">记录人</td>
+                 <td rowspan="2"><span id="spRecorder"></span></td>
+             </tr>
+             <tr>
+                 <td style="width:150px;"><span id="spEnforcers2"></span></td>
+                 <td style="width:200px;"><span id="spCertificates2"></span></td>
+             </tr>
+             <tr>
+                 <td rowspan="5">现场人员基本情况</td>
+                 <td>姓名</td>
+                 <td><span id="spName"></span></td>
+                 <td>性别</td>
+                 <td colspan="2"><span id="spSex"></span></td>
+             </tr>
+             <tr>
+                 <td>身份证号</td>
+                 <td><span id="spInvolvedIDCode"></span></td>
+                 <td>与案件关系</td>
+                 <td colspan="2"><span id="spInvolvedRelation"></span></td>
+             </tr>
+             <tr>
+                 <td>单位及职务</td>
+                 <td><span id="spInvolvedDepartment"></span></td>
+                 <td>联系电话</td>
+                 <td colspan="2"><span id="spInvolvedTelNo"></span></td>
+             </tr>
+             <tr>
+                 <td>联系地址</td>
+                 <td colspan="4"><span id="spInvolvedAddress"></span></td>
+             </tr>
+             <tr>
+                 <td>车（船）号</td>
+                 <td><span id="spCarNo"></span></td>
+                 <td>车（船）型</td>
+                 <td colspan="2"><span id="spCarModel"></span></td>
+             </tr>
+         </table>
+     </div>
+</body>
+</html>

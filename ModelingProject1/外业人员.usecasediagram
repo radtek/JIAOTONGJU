@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="2fb0109f-3019-41a4-9113-07254ef1c600" name="外业人员" linkedPackageId="cd1c8690-4418-40ae-a7ec-febcd21d6d2e" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="81984e59-294c-4b47-b7bb-28fe50ed0b6e">
+      <elementDefinition Id="a072ef9a-1501-4409-a2f5-928480595ae2" />
+      <body>发现涉嫌违法车辆</body>
+      <annotatedElements>
+        <actorMoniker Id="b7f04fa8-aef0-405f-9703-e7ad16a20166" LastKnownName="外业人员" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="504dc1f0-f8ef-4822-bdb3-b0a56e5c05d1">
+      <profileInstance Id="fb217bbd-5374-4c12-9a16-ede429c38000" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="624ece5a-34c9-40cd-880a-d622027e8422">
+      <profileInstance Id="68597865-e4cd-421a-b7b7-c28f20359693" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="b7f04fa8-aef0-405f-9703-e7ad16a20166" name="外业人员" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="28a952fc-1d4f-4cf2-9362-235138d05a51" />
+        <targetEnds>
+          <association Id="9d342a0e-b341-4b58-be7a-0e76f64e578c" isDerived="false" sourceEndRoleName="外业人员" targetEndRoleName="UseCase1" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="db5114d8-466b-4852-a07f-829d3225917c" LastKnownName="记录" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e7337efb-414b-45c1-ab1b-c8cf0e68be1d" name="外业人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ab327833-7847-41d1-80e1-0fa8b32bf07d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5c167ab0-e0a3-49e6-8d6e-93268d938301" name="UseCase1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="98392f2e-7526-4378-ae28-bd81415edbfe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="45a1b7ed-fb19-4bce-a7f9-d74c711415b6" />
+          </association>
+          <association Id="eab87655-516a-4ddc-88c8-ffbe4376c6c5" isDerived="false" sourceEndRoleName="外业人员" targetEndRoleName="询问笔录" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="e0b3c3cf-c406-46c0-bb62-1ee15dd057ef" LastKnownName="调查" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="68224e7f-f365-49e9-a425-412fcb203f77" name="外业人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="449ab76a-687d-4774-a667-4766e9854cfa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5e3e6f6a-f26f-4137-addd-01a37a462b8d" name="询问笔录" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3d824bea-bd53-4f6e-8ceb-8b9c019539f1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4fde8fd6-aed3-4f6b-ace0-bf1e7cbf823a" />
+          </association>
+          <association Id="1907c872-1dfe-46e0-96ac-122c69ca7aea" isDerived="false" sourceEndRoleName="外业人员" targetEndRoleName="立案审批表" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bbdcb49c-b2c1-4525-98bc-59d21e4a92a6" LastKnownName="立案" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b6721fd1-4be0-4a64-88bd-ef6fa81b3fec" name="外业人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c631e1c6-f852-4f54-a109-d6346dfad4f2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0ee6b495-b1b4-4066-aebd-cd14b1fd30a4" name="立案审批表" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fb2457fd-502b-4680-881d-8398cd90d97f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ca0f56f2-e5a4-4960-88f5-7a0317c1eb84" />
+          </association>
+          <association Id="09db727f-5ada-46e7-9faa-b73a53f7f85c" isDerived="false" sourceEndRoleName="外业人员" targetEndRoleName="处罚" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="709bf1d6-d3b8-4872-b85b-eded5723554c" LastKnownName="处罚" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="964c4155-5438-4035-bcb7-96f321e785b9" name="外业人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a4f099b-ab35-4632-9245-14f431984c3b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="02ef5b64-3d14-4847-959e-81ffaaf3db2a" name="处罚" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="649761d1-b3cc-45d6-86ee-826b68a53e07" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b16a0b42-609b-47af-bbe4-2642cb233e22" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="db5114d8-466b-4852-a07f-829d3225917c" name="记录" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c39c96dc-2f5e-4ba6-ab50-fbd9b2fae329" />
+        <additions>
+          <include Id="f86616be-d785-4595-b793-ba9c33a52fa4">
+            <useCaseMoniker Id="5b13040f-659e-40e0-8c9a-b36c681f9d9f" LastKnownName="填写现场笔录" />
+            <elementDefinition Id="ebd01487-7f05-4b46-8b53-46fec2bd1de5" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e0b3c3cf-c406-46c0-bb62-1ee15dd057ef" name="调查" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="219a7386-c72c-44cd-86ed-a72eb7e14093" />
+        <additions>
+          <include Id="24473a16-512d-4048-b299-184a2544451b">
+            <useCaseMoniker Id="1ecfade2-7057-47bc-9db2-c9830ab01d86" LastKnownName="填写询问笔录" />
+            <elementDefinition Id="24240573-fca3-4f39-826a-bcd9725c11c4" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bbdcb49c-b2c1-4525-98bc-59d21e4a92a6" name="立案" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0df870a6-4b23-4c8c-b335-e0c6b6658206" />
+        <additions>
+          <include Id="680015f5-9899-48e9-b731-0c43f61b1541">
+            <useCaseMoniker Id="e549f4c6-bd73-439c-8be8-8e20a41131e5" LastKnownName="填写立案审批表" />
+            <elementDefinition Id="71d26108-4983-48b8-9ea9-6d85fc5cefad" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5b13040f-659e-40e0-8c9a-b36c681f9d9f" name="填写现场笔录" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="16151173-b63e-4105-8cfc-cd8c1d6f5723" />
+        <suppliersInternal>
+          <dependency Id="159d9e96-0d48-4ccf-9114-e5c7e22b95af">
+            <useCaseMoniker Id="ae838412-4322-425d-9906-56f7c8a88c93" LastKnownName="签字确认" />
+            <elementDefinition Id="ad304b80-4c38-4c2f-88c2-7b0666988df0" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include Id="5cb8b6a1-30b7-462d-ba67-cab03cda5b95">
+            <useCaseMoniker Id="fc3f5c33-e008-4a24-b8bf-1c15ea4c45d6" LastKnownName="提交" />
+            <elementDefinition Id="4082663a-833e-4289-93d8-77d397926541" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="1ecfade2-7057-47bc-9db2-c9830ab01d86" name="填写询问笔录" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="798bc92f-ccaa-4b3f-a85a-7441a1ffe94b" />
+        <suppliersInternal>
+          <dependency Id="f78b4259-a1c8-4727-9322-2e70eed3be66">
+            <useCaseMoniker Id="ae838412-4322-425d-9906-56f7c8a88c93" LastKnownName="签字确认" />
+            <elementDefinition Id="cbd14c16-8e3b-404a-ac93-7d418a045b13" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include Id="9c57715d-0919-4143-bc9a-7b10fe6d4c49">
+            <useCaseMoniker Id="fc3f5c33-e008-4a24-b8bf-1c15ea4c45d6" LastKnownName="提交" />
+            <elementDefinition Id="7e251382-694c-4bf3-ad1f-fcbeab666c91" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="e549f4c6-bd73-439c-8be8-8e20a41131e5" name="填写立案审批表" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="477ad19a-6288-4005-a285-c9057781ad8d" />
+        <suppliersInternal>
+          <dependency Id="cbbec6cc-49f4-4bd5-82ef-19ab165fa628">
+            <useCaseMoniker Id="ae838412-4322-425d-9906-56f7c8a88c93" LastKnownName="签字确认" />
+            <elementDefinition Id="ec1fa55f-7ee8-4bce-a563-5ec9fa08e77a" />
+          </dependency>
+        </suppliersInternal>
+        <additions>
+          <include Id="19ebdd1c-917a-4468-8c5d-f79a7b4a1ad9">
+            <useCaseMoniker Id="fc3f5c33-e008-4a24-b8bf-1c15ea4c45d6" LastKnownName="提交" />
+            <elementDefinition Id="2867c875-9b6a-4648-8ec7-3bde626a3894" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ae838412-4322-425d-9906-56f7c8a88c93" name="签字确认" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3bf66d61-4b7d-4bcb-80dd-f46fb1a7d6fb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="fc3f5c33-e008-4a24-b8bf-1c15ea4c45d6" name="提交" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f0d8cf2f-98fd-4d35-9d7b-2cf1d00f58b4" />
+        <targetEnds>
+          <association Id="e6bc561e-5ce9-494d-bfa6-82ac578d7700" isDerived="false" sourceEndRoleName="提交" targetEndRoleName="交通局执法系统" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="35343310-fe68-47e2-9189-ff476683c9e7" LastKnownName="交通局执法系统" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c65989f6-bcd9-4dd8-af40-3af6e8fcdd12" name="提交" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="701de2f4-474d-4f33-a27b-d88643ac6440" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c12a4144-c853-4eac-8381-acec043f0524" name="交通局执法系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4a5b7ab8-d4c2-440c-ab66-b6d0baa9e760" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8715f475-52b6-43ae-b3d2-9c29071a260b" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <artifact Id="35343310-fe68-47e2-9189-ff476683c9e7" name="交通局执法系统" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6ff97bfe-8fdc-4b1a-90bb-c4a4264d65be" />
+        <targetEnds>
+          <association Id="27a97ef6-0902-4ff9-9243-fb47fc16a011" isDerived="false" sourceEndRoleName="交通局执法系统" targetEndRoleName="交通局执法系统" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="35343310-fe68-47e2-9189-ff476683c9e7" LastKnownName="交通局执法系统" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="34c8c353-e584-46c0-b414-1d0d36f4a087" name="交通局执法系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d79472da-bbf6-41d9-b083-c180a6c21b02" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="232da78a-c483-47c1-9934-e54e5c777f2e" name="交通局执法系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c6076630-d5bd-4735-81d1-458859146509" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="510c0161-6dd0-47d4-bb3d-884956b67276" />
+          </association>
+          <association Id="423f553c-93f6-4c98-942f-8ce3d2dce85d" isDerived="false" sourceEndRoleName="交通局执法系统" targetEndRoleName="反馈" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="74e9453c-a773-42dd-a4ae-ba69e5903467" LastKnownName="反馈" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="95d7be6a-0197-4765-9816-7a940eb572d6" name="交通局执法系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="124c74ac-fe02-4f51-8b8e-3815c0155eaf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8f8eac40-3399-41eb-9773-67297955188b" name="反馈" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6194cc5d-9730-45c3-b4ea-762303227c63" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f646732f-f26b-43eb-b905-f2332eed7ee4" />
+          </association>
+        </targetEnds>
+      </artifact>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="74e9453c-a773-42dd-a4ae-ba69e5903467" name="反馈" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="58ad795b-3fe7-4d0b-841d-40f089d6bdeb" />
+        <targetEnds>
+          <association Id="0023a4ee-bc7d-47f8-9676-ae6f4514b084" isDerived="false" sourceEndRoleName="反馈" targetEndRoleName="外业人员" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="b7f04fa8-aef0-405f-9703-e7ad16a20166" LastKnownName="外业人员" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="624a1397-3cf3-437f-9e69-36cf7dbd71c7" name="反馈" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="68f0ba60-f686-4ab3-b34c-ff9e46ba0100" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f767b69c-aadc-4c25-8b70-00bb4e633d39" name="外业人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6cf2a401-f999-461a-adec-4080fbf5f1a8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="95b324ec-7024-4034-810a-6f5c04d5cf6c" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="709bf1d6-d3b8-4872-b85b-eded5723554c" name="处罚" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="31e09bcd-d458-48c9-bc74-4bcd20069929" />
+        <targetEnds>
+          <association Id="96222f0a-d4e5-4cfc-b619-33782a8340eb" isDerived="false" sourceEndRoleName="处罚" targetEndRoleName="违法者" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="dae3c509-6b80-4aad-9961-c521432bde06" LastKnownName="违法者" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7a5c841d-cfa9-49f4-8de6-e7d8dcbbe346" name="处罚" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e599f699-d2a7-414c-b37d-34725e5b3cf0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="38d0fdf2-5ee7-4866-a5bf-b94ded702df1" name="违法者" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f401d57a-51ee-482d-ae72-82adf249c66a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="252c1e25-8962-453a-8beb-6ce0cdf8285d" />
+          </association>
+        </targetEnds>
+        <additions>
+          <include Id="567495d2-3829-45f7-9893-b24d8ebc1b4f">
+            <useCaseMoniker Id="4f5bee4a-0ecc-42c7-9c56-201a9aa76979" LastKnownName="开具处罚决定书" />
+            <elementDefinition Id="21efebd6-5d07-40f8-8132-943b1fb08fbe" />
+          </include>
+        </additions>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4f5bee4a-0ecc-42c7-9c56-201a9aa76979" name="开具处罚决定书" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3fb85b5f-6fe7-41c2-833b-7002f7cf4d88" />
+        <targetEnds>
+          <association Id="aee4ba53-6403-4df7-a8df-8ce4103c732d" isDerived="false" sourceEndRoleName="开具处罚决定书" targetEndRoleName="保存" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3e021f69-2019-485b-b4bd-f38d94ec79ef" LastKnownName="保存" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5c41a5ee-fc88-4517-9ed9-4853e82e0076" name="开具处罚决定书" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="56bd6465-6220-48ec-b8c3-2d3b31244f30" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8d6b6b78-1951-4c17-9f2d-49814ecd24e7" name="保存" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a43113c-351a-4517-a16a-ce7a7ac94bd3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ba7a3e32-1da5-4c20-ba8a-aad23793e8c7" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3e021f69-2019-485b-b4bd-f38d94ec79ef" name="保存" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="232de0ef-dcc0-46f0-9f38-414a6b1f96d8" />
+        <targetEnds>
+          <association Id="71ba397d-15be-4b57-bb30-216873850de9" isDerived="false" sourceEndRoleName="保存" targetEndRoleName="交通局执法系统" isLeaf="false" isAbstract="false">
+            <artifactMoniker Id="35343310-fe68-47e2-9189-ff476683c9e7" LastKnownName="交通局执法系统" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2f394b4-397c-4eb8-ac5c-6293d8620258" name="保存" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5d31ebb8-d336-4aa9-bc22-3a4ebb88cc84" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2eb89ebb-51b4-479c-b5f5-914196c9e6a8" name="交通局执法系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae052e59-35de-4af4-bf8b-4e5203b66281" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ab2a5b1b-31d4-483d-be7e-28e40cfefcca" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="dae3c509-6b80-4aad-9961-c521432bde06" name="违法者" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="550d9ab7-2e8c-44d8-ab62-80da3587ed9a" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="cd1c8690-4418-40ae-a7ec-febcd21d6d2e" name="ModelingProject1">
+    <elementDefinition Id="320c1704-c8cd-4d21-b0a9-c2125ab9015b" />
+  </package>
+</useCaseModelRoot>

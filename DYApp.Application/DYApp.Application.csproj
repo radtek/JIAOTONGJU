@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BB57C1CA-1327-472D-BE4D-D42AD594FCC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DYApp.Application</RootNamespace>
+    <AssemblyName>DYApp.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\DYApp.WebApi\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMap\DyMapper.cs" />
+    <Compile Include="Impl\AskRecordService.cs" />
+    <Compile Include="Impl\CaseHandlingService.cs" />
+    <Compile Include="Impl\EvidenceService.cs" />
+    <Compile Include="Impl\FilingService.cs" />
+    <Compile Include="Impl\FunctionService.cs" />
+    <Compile Include="Impl\InvolvedService.cs" />
+    <Compile Include="Impl\RoleService.cs" />
+    <Compile Include="Impl\SceneRecordService.cs" />
+    <Compile Include="Impl\UserInfoService.cs" />
+    <Compile Include="Impl\WorkFlowService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DYApp.DataObject\DYApp.DataObject.csproj">
+      <Project>{24af7f25-d0af-4f10-9060-b5a07a0aff1d}</Project>
+      <Name>DYApp.DataObject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DYApp.Domain\DYApp.Domain.csproj">
+      <Project>{B3B19797-E157-4452-8CFA-86983100DAD6}</Project>
+      <Name>DYApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DYApp.Infrastructure\DYApp.Infrastructure.csproj">
+      <Project>{8080B1CF-497A-44F0-875C-AE996F9CF9DA}</Project>
+      <Name>DYApp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceContracts\DYApp.ServiceContracts.csproj">
+      <Project>{7D9ABBF5-DD1C-4A51-960C-932AF57DFDC3}</Project>
+      <Name>DYApp.ServiceContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
